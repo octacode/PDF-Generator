@@ -6,6 +6,14 @@ var express = require('express'),
 
 const fs = require('fs');
 
+app.get('/', (req, res)=>{
+    res.render('new.ejs');
+});
+
+app.post('/', (req, res)=>{
+    console.log('Done successfully');
+});
+
 //Head Details
 doc.fontSize(14);
 doc.text('Kumar Shashwat',{
@@ -22,7 +30,7 @@ doc.fillColor('blue').text('allblue.shasha@gmail.com', {
 doc.fillColor('black').text('+91-7599243144', {
     width: 410,
     align: 'center'});
-    
+
 doc.moveDown(1.5);
 
 //Education Details
@@ -76,17 +84,7 @@ doc.text('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 doc.moveDown(1.5);
 doc.fontSize(14).text('Skills', {underline: true});
 doc.fontSize(10);
-doc.text('Java', {align: 'left', continued: true});
-doc.text('Android', {align: 'center', continued: true});
-doc.text('Web development', {align: 'right'});
-doc.moveDown(0.5);
-doc.text('JavaScript', {align: 'left', continued: true});
-doc.text('Microsoft Office', {align: 'center', continued: true});
-doc.text('SQL', {align: 'right'});
-doc.moveDown(0.5);
-doc.text('C plus plus', {align: 'left', continued: true});
-doc.text('Machine Learning', {align: 'center', continued: true});
-doc.text('Python', {align: 'right'});
+doc.text('Java, Android, Web development, JavaScript, Microsoft Office, SQL, C++, Machine Learning and Python', {align: 'center'});
 
 // PROJECT
 // Name, date, description and link
@@ -119,7 +117,6 @@ doc.pipe(fs.createWriteStream('testing.pdf'));
 
 doc.end();
 
-/*app.listen(port, function(){
+app.listen(port, function(){
     console.log('Server sunn rha hai...'+port)
 });
-*/
