@@ -155,7 +155,7 @@ app.post('/', (req, res)=>{
       else {
         console.log("Successfully uploaded data");
 //Do the insertion into db here and conflict strategy as REPLACE.
-        console.log(data.location);
+        console.log(data.Location);
         res.render('complete.ejs');
       }
     });
